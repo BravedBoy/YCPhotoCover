@@ -1,6 +1,7 @@
 package com.yc.cn.cover;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,13 +33,13 @@ public class CoverAdapter extends RecyclerView.Adapter<CoverAdapter.ViewHolder> 
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.item_gallery_image_view, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(CoverAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull CoverAdapter.ViewHolder holder, final int position) {
         if (position >= mPictureList.size()) {
             return;
         }

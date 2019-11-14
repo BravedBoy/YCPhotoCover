@@ -36,11 +36,11 @@ public class RecyclerCoverFlow extends RecyclerView {
 
     private void init() {
         createManageBuilder();
-        setLayoutManager(mManagerBuilder.build());
+        this.setLayoutManager(mManagerBuilder.build());
         //开启重新排序
-        setChildrenDrawingOrderEnabled(true);
-        setOverScrollMode(OVER_SCROLL_NEVER);
-         addOnScrollListener(new RecyclerView.OnScrollListener() {
+        this.setChildrenDrawingOrderEnabled(true);
+        this.setOverScrollMode(OVER_SCROLL_NEVER);
+        this.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
