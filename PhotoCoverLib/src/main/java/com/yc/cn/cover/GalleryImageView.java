@@ -1,14 +1,12 @@
 package com.yc.cn.cover;
 
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
-
 import com.ycbjie.photocoverlib.R;
 
 import java.util.ArrayList;
@@ -50,7 +48,9 @@ public class GalleryImageView extends LinearLayout {
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.view_scroll_gallery, this, true);
         recyclerView = findViewById(R.id.recycler_view);
+        viewPager = findViewById(R.id.viewPager);
         recyclerView.setVisibility(VISIBLE);
+        initializeViewPager();
     }
 
     public GalleryViewPager getViewPager() {
@@ -59,11 +59,6 @@ public class GalleryImageView extends LinearLayout {
 
     public int getCurrentItem() {
         return viewPager.getCurrentItem();
-    }
-
-    public GalleryImageView setFragmentManager(FragmentManager fragmentManager) {
-        initializeViewPager();
-        return this;
     }
 
     public GalleryImageView addOnPageChangeListener(final ViewPager.OnPageChangeListener listener) {
@@ -134,7 +129,6 @@ public class GalleryImageView extends LinearLayout {
     }
 
     private void initializeViewPager() {
-        viewPager = findViewById(R.id.viewPager);
         pagerAdapter = new CoverImageAdapter(mPictureList,context);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setCurrentItem(position);
@@ -151,7 +145,7 @@ public class GalleryImageView extends LinearLayout {
             @Override
             public void onItemSelected(int position) {
                 if (position < mPictureList.size() && position>=0) {
-                    getViewPager().setCurrentItem(position, false);
+                    setCurrentItem(position);
                 }
             }
         });
@@ -159,7 +153,7 @@ public class GalleryImageView extends LinearLayout {
             @Override
             public void clickItem(int pos) {
                 if (mPictureList.size()>pos && pos>=0){
-                    getViewPager().setCurrentItem(pos, false);
+                    setCurrentItem(pos);
                 }
             }
         });

@@ -63,8 +63,6 @@ public class FirstActivity extends AppCompatActivity {
                 //设置缩放的倍数
                 //设置是否隐藏底部缩略图，主要是防止后期产品参考懂车帝，又不要底部滑动，非常灵活修改
                 .hideThumbnails(false)
-                //设置FragmentManager
-                .setFragmentManager(getSupportFragmentManager())
                 //添加滑动事件，也可以不用添加
                 .addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
