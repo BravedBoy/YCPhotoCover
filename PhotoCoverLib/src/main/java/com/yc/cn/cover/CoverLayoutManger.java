@@ -80,8 +80,7 @@ public class CoverLayoutManger extends RecyclerView.LayoutManager {
     /**是否启动Item半透渐变*/
     private boolean mItemGradualAlpha = false;
 
-    public CoverLayoutManger(boolean isFlat, boolean isGreyItem,
-                             boolean isAlphaItem, float cstInterval) {
+    public CoverLayoutManger(boolean isFlat, boolean isGreyItem, boolean isAlphaItem, float cstInterval) {
         mIsFlatFlow = isFlat;
         mItemGradualGrey = isGreyItem;
         mItemGradualAlpha = isAlphaItem;

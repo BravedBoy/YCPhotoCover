@@ -126,8 +126,7 @@ public class RecyclerCoverFlow extends RecyclerView {
 
     @Override
     protected int getChildDrawingOrder(int childCount, int i) {
-        int center = getCoverFlowLayout().getCenterPosition()
-                - getCoverFlowLayout().getFirstVisiblePosition();
+        int center = getCoverFlowLayout().getCenterPosition() - getCoverFlowLayout().getFirstVisiblePosition();
         //计算正在显示的所有Item的中间位置
         if (center < 0) {
             center = 0;
